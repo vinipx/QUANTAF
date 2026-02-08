@@ -2,8 +2,6 @@ site_name: QUANTAF Documentation
 site_url: https://vinipx.github.io/QUANTAF/
 theme:
   name: material
-  logo: assets/logo.png
-  favicon: assets/favicon.ico
   palette:
     - scheme: slate
       primary: blue
