@@ -1,0 +1,56 @@
+quantaf:
+  environment: local  # local | ci | staging
+
+  fix:
+    defaultVersion: FIX44
+    sessions:
+      trader:
+        senderCompId: QUANTAF_CLIENT
+        targetCompId: TARGET_PLATFORM
+        host: localhost
+        port: 9876
+      exchange:
+        type: acceptor
+        senderCompId: QUANTAF_EXCHANGE
+        targetCompId: TARGET_PLATFORM_OUTBOUND
+        port: 9877
+
+  messaging:
+    provider: activemq  # activemq | ibmmq | kafka
+    activemq:
+      brokerUrl: tcp://localhost:61616
+      user: admin
+      password: admin
+    ibmmq:
+      host: localhost
+      port: 1414
+      queueManager: QM1
+      channel: DEV.APP.SVRCONN
+    kafka:
+      bootstrapServers: localhost:9092
+
+  rest:
+    baseUrl: http://localhost:8080/api
+    oauth2:
+      tokenUrl: http://localhost:8080/oauth/token
+      clientId: ${QUANTAF_CLIENT_ID}
+      clientSecret: ${QUANTAF_CLIENT_SECRET}
+
+  ai:
+    provider: ollama  # openai | ollama | anthropic
+    model: llama3
+    baseUrl: http://localhost:11434
+    apiKey: ${QUANTAF_AI_API_KEY}
+    fallbackToTemplates: true
+    cacheResponses: true
+
+  ledger:
+    amountPrecision: 8
+    defaultTolerance: 0.0001
+    timezone: UTC
+
+  reporting:
+    allure:
+      resultsDir: build/allure-results
+      attachFixMessages: true
+      attachMqPayloads: true

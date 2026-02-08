@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  activemq:
+    image: apache/activemq-artemis:latest
+    container_name: quantaf-activemq
+    ports:
+      - "61616:61616"   # AMQP / OpenWire
+      - "8161:8161"     # Web Console
+    environment:
+      ARTEMIS_USER: admin
+      ARTEMIS_PASSWORD: admin
+    volumes:
+      - activemq-data:/var/lib/artemis-instance
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8161/console"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  activemq-data:
