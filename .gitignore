@@ -20,3 +20,9 @@ Thumbs.db
 
 # Environment
 .env
+
+# Documentation
+.docs_server.pid
+documentation/node_modules/
+documentation/.docusaurus/
+documentation/build/

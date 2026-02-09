@@ -128,7 +128,7 @@ QUANTAF is structured in **4 Concentric Layers** for clean separation of concern
 - **Java 21+** ([Install](https://www.oracle.com/java/technologies/downloads/))
 - **Gradle** (included via gradlew)
 - **Docker** & **Docker Compose** (for local services)
-- **mkdocs** (for documentation, auto-installed)
+- **mkdocs** is no longer required — documentation uses [Docusaurus](https://docusaurus.io/) (requires Node.js ≥ 18)
 
 ### Setup & Run
 
@@ -139,7 +139,7 @@ cd QUANTAF
 
 # 2. Serve documentation locally
 ./docs.sh
-# Opens http://localhost:8000
+# Opens http://localhost:3000
 
 # 3. Start local services
 docker-compose up -d
@@ -232,11 +232,14 @@ QUANTAF/
 │   ├── features/             # Cucumber feature files
 │   └── quantaf.yml           # Test configuration
 │
-├── docs/                     # Complete documentation
+├── documentation/            # Documentation site (Docusaurus)
+│   ├── docs/                 # Documentation source (Markdown)
+│   ├── src/                  # React components & custom CSS
+│   └── docusaurus.config.js  # Site configuration
 ├── docker-compose.yml        # Local services
 ├── build.gradle.kts          # Build configuration
-├── mkdocs.yml               # Documentation config
-└── README.md                # This file
+├── docs.sh                   # Documentation server launcher
+└── README.md                 # This file
 ```
 
 [📂 Development Reference →](docs/development.md#directory-structure)
