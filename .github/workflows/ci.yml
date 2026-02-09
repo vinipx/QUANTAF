@@ -46,22 +46,6 @@ jobs:
         env:
           CI: true
 
-      - name: Generate Allure Report
-        if: always()
-        uses: simple-elf/allure-report-action@v1.9
-        with:
-          allure_results: build/allure-results
-          allure_report: build/allure-report
-          allure_history: allure-history
-
-      - name: Publish Allure Report to GitHub Pages
-        if: always()
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: build/allure-report
-
       - name: Upload Test Results
         if: always()
         uses: actions/upload-artifact@v4
