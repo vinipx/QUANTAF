@@ -466,7 +466,7 @@ See [LICENSE](LICENSE) file for full details.
 
 <div align="center">
 
-**Made with ❤️ for Financial Systems Testing**
+**Built with ❤️ by <a href="https://github.com/vinipx">vinipx</a> for Financial Systems Testing Community**
 
 [⭐ Star us on GitHub](https://github.com/vinipx/QUANTAF) • [📖 Read the Docs](docs/index.md) • [💬 Discussions](https://github.com/vinipx/QUANTAF/discussions)
 
