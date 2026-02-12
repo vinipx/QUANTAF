@@ -1,4 +1,5 @@
-# QUANTAF - The High-Frequency Assurance Engine
+<h1 align="center">QUANTAF</h1>
+<h2 align="center">High-Frequency Assurance Engine for Testing</h1>
 
 [![Java 21](https://img.shields.io/badge/Java-21_LTS-ED8936?logo=openjdk&logoColor=white)](https://www.oracle.com/java/)
 [![Gradle](https://img.shields.io/badge/Gradle-Latest-02303A?logo=gradle&logoColor=white)](https://gradle.org/)
